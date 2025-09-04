@@ -17,6 +17,36 @@ becomes C. To change a message back, each letter is replaced by the one three be
 
 ![image](https://github.com/Hemamanigandan/CNS/assets/149653568/eb9c6c43-8c80-4cdd-b9d4-91705a311c79)
 
+## PROGRAM:
+```
+def caesar_encrypt(text, key):
+    result = ""
+    for c in text:
+        if c.isupper():
+            result += chr(((ord(c) - ord('A') + key) % 26) + ord('A'))
+        elif c.islower():
+            result += chr(((ord(c) - ord('a') + key) % 26) + ord('a'))
+        else:
+            result += c  # keep non-alphabet characters unchanged
+    return result
+
+def caesar_decrypt(text, key):
+    return caesar_encrypt(text, -key)
+
+# Main program
+message = input("Enter the message to encrypt: ")
+key = int(input("Enter the Caesar Cipher key (an integer): "))
+
+encrypted = caesar_encrypt(message, key)
+print("Encrypted Message:", encrypted)
+
+decrypted = caesar_decrypt(encrypted, key)
+print("Decrypted Message:", decrypted)
+
+```
+## OUTPUT :
+<img width="646" height="226" alt="image" src="https://github.com/user-attachments/assets/2d14fe7f-dfdb-4c14-bcd9-774149eac9ef" />
+
 
 ## ALGORITHM:
 
